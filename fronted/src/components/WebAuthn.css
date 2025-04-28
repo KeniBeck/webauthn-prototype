@@ -1,0 +1,328 @@
+/* Estilos generales para componentes WebAuthn */
+.webauthn-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.webauthn-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.webauthn-header {
+  text-align: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+.webauthn-header h2 {
+  margin: 0;
+  color: #2a2f45;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.webauthn-header p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Formulario y controles */
+.webauthn-form {
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.webauthn-input, 
+.webauthn-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #1e293b;
+  background-color: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.webauthn-input:focus,
+.webauthn-select:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.webauthn-input:disabled,
+.webauthn-select:disabled {
+  background-color: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.webauthn-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px 24px;
+  background-color: #4285f4;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  gap: 10px;
+}
+
+.webauthn-button:hover {
+  background-color: #3b78e7;
+}
+
+.webauthn-button:active {
+  transform: translateY(1px);
+}
+
+.webauthn-button.disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.webauthn-button.loading {
+  background-color: #93c5fd;
+  cursor: wait;
+}
+
+/* Iconos y animaciones */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.icon-fingerprint:before {
+  content: '👆';
+}
+
+.icon-lock-open:before {
+  content: '🔓';
+}
+
+.icon-error:before {
+  content: '⚠️';
+}
+
+/* Mensajes de estado */
+.webauthn-status {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: #f1f5f9;
+  font-size: 14px;
+}
+
+.webauthn-status.error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.webauthn-status.success {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.webauthn-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Información de soporte */
+.webauthn-support-info {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.webauthn-support-info h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #4b5563;
+  font-size: 16px;
+}
+
+.webauthn-support-info ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.webauthn-support-info li {
+  margin-bottom: 8px;
+  color: #64748b;
+}
+
+/* Credenciales guardadas */
+.credentials-section {
+  margin-top: 32px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.credentials-section h3 {
+  color: #4b5563;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.credentials-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.secondary-button,
+.import-button {
+  padding: 8px 16px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.secondary-button:hover,
+.import-button:hover {
+  background-color: #e2e8f0;
+}
+
+.secondary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.credentials-list {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.credential-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.credential-item:last-child {
+  border-bottom: none;
+}
+
+.credential-item:hover {
+  background-color: #f8fafc;
+}
+
+.credential-item.selected {
+  background-color: #e0f2fe;
+  border-left: 3px solid #3b82f6;
+}
+
+.credential-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.credential-user {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.credential-date {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.credential-id {
+  font-size: 12px;
+  color: #475569;
+  font-family: monospace;
+}
+
+.no-credentials {
+  padding: 16px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.no-credentials-message {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #fef3c7;
+  border-radius: 8px;
+  color: #92400e;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .webauthn-container {
+    padding: 12px;
+  }
+  
+  .webauthn-card {
+    padding: 16px;
+  }
+  
+  .webauthn-button {
+    padding: 12px 16px;
+  }
+  
+  .credentials-actions {
+    flex-direction: column;
+  }
+}
